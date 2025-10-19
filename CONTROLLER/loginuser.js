@@ -16,9 +16,7 @@ const loginUser = async (req, res) => {
         if (!isPassword) {
             return res.status(400).send({ message: ' invalid credential ' })
         }
-         if (!existUser.verified) {
-            return res.status(400).send({ message: ' please verify your mail ' })
-        }
+         
         const token = jwt.sign({ userId: existUser._id, email: existUser.email }, process.env.TOKEN_KEY)
           res.cookie('JWT',token,{
                     expires:new Date(Date.now()+86400000),
