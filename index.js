@@ -18,7 +18,6 @@ app.use('/api',router);
 app.listen(PORT , ()=>{
     console.log(`http://localhost:${PORT}`);
 });
-
 app.get('/',(req,res)=>{
     // getting all users
     User.find().then((users)=>{res.json(users);}).catch((err)=>{

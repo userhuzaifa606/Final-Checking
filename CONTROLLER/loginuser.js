@@ -22,7 +22,8 @@ const loginUser = async (req, res) => {
                     expires:new Date(Date.now()+86400000),
                     httpOnly:true,
                     secure: true,
-                    sameSite:"None"
+                    sameSite:"None",
+                    path:'/'
                 })
         return res.status(200).send({ status: 200, message: "User login Successfully!", data: existUser, token: token });
     } catch (error) {
