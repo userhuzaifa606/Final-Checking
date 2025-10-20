@@ -18,7 +18,7 @@ const loginUser = async (req, res) => {
         }
          
         const token = jwt.sign({ userId: existUser._id, email: existUser.email }, process.env.TOKEN_KEY)
-          res.cookie('JWT',token,{
+         await res.cookie('JWT',token,{
                     expires:new Date(Date.now()+86400000),
                     httpOnly:true,
                     secure: true,
