@@ -32,7 +32,7 @@ export const createUser = async (req, res) => {
             subject: 'Login your account',
             html: `<h2>Hello   ${user.username}!</h2><p> <b>your Email :${user.email}</b></p><p>Your password:${user.password}Do login.</p>`
         });
-        res.status(201).json({ message: "user created" });
+        res.status(201).json({ message: "user created successfully go to login " });
       
     } catch (error) {
         console.error("Error sending email:", error);

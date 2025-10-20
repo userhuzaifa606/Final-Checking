@@ -21,8 +21,8 @@ const loginUser = async (req, res) => {
           res.cookie('JWT',token,{
                     expires:new Date(Date.now()+86400000),
                     httpOnly:true,
-                    secure: false,
-                    sameSite:"strict"
+                    secure: true,
+                    sameSite:"None"
                 })
         return res.status(200).send({ status: 200, message: "User login Successfully!", data: existUser, token: token });
     } catch (error) {
